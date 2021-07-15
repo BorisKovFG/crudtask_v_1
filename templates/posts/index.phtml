@@ -1,1 +1,19 @@
-<?php print_r("Hello, world") ?>
+<table>
+    <?php foreach ($posts as $post): ?>
+        <tr>
+            <td>
+                <a href="/posts/<?= $post['id'] ?>"><?= $post['name'] ?></a>
+            </td>
+        </tr>
+    <?php endforeach ?>
+    <tr>
+        <?php  if ($page > 1): ?>
+        <td>
+            <a href="/posts?page=<?= $page - 1 ?>">Назад</a>
+        </td>
+        <?php endif ?>
+        <td>
+            <a href="/posts?page=<?= $page + 1 ?>">Вперед</a>
+        </td>
+    </tr>
+</table>
